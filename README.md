@@ -78,6 +78,7 @@ Para executar os testes utilize o comando abaixo
 npm test
 ```
 ![testes unitários Carrefour Api](test1.png)
+
 ![testes unitários User Api](test2.png)
 
    
