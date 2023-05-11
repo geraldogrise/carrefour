@@ -1,5 +1,5 @@
 {
-  "name": "NodeApi",
+  "name": "CarrefourApi",
   "version": "1.0.0",
   "description": "Api Node",
   "main": "Server.ts",
