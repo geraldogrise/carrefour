@@ -1,4 +1,4 @@
-# Carrefoiur desafio
+# Carrefour desafio
 ## Fluxo de Caixa
 ![desenho](desenho.png)
 
