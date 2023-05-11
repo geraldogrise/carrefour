@@ -30,5 +30,22 @@ Com todas as aplicações executando normalmente segue os acessos
 | UserApi | http://localhost:9001/api-docs/swagger/ | ------ | ------
 | Grafana | http://localhost:3000 | admin | admin
 | Promethus | http://localhost:9090 | ------ | ------
+
+## Padrões de projetos utilizados
+
+- Singleton
+- Decorator
+- Factory
+- Repository
+- Injeção de Dependência 
+
+
+## Observalidade
+- Foi adicionado a opção de observalidade, health check e metricas com o prometheus.
+- Para visualizar acesse http://localhost:9090/targes
+- Cada serviço possui um endpoint para health check, ex: http://localhost:5000/health
+
+
+
    
 
