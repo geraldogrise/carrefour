@@ -1,5 +1,9 @@
-# Fluxo de Caixa
+# Carrefoiur desafio
+## Fluxo de Caixa
 ![desenho](desenho.png)
 
-@Markdown
--Teste
+## Tecnologias
+
+- Node js
+- TypeORM
+- Jest
