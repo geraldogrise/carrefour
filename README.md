@@ -65,5 +65,9 @@ Como podemos ver a classe está utilizado injeção de depedência para que os m
 dependem de outros, ou seja sem a necessidade de composição, também podemos ver que as classes
 implementam interfaces com me´todos que realmente vão utilizar, os objetos foram utilizados 
 com a intenção de serem extendidos e não modificados e as classes tem uma unica responsabilidade.
+
+## Aplicações Swagger
+![swagger Carrefour Api](swagger1.png)
+![swagger User Api](swagger2.png)
    
 
