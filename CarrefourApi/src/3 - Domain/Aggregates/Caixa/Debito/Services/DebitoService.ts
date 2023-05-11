@@ -15,6 +15,8 @@ export class DebitoService implements IDebitoService
 
     public async InsertDebito (debito: Debito): Promise<void>
     {
+        debito.data = new Date();
+        console.log(debito);
         await this._debitoRepository.Insert(debito as Debito);
     }
 

@@ -16,5 +16,7 @@ export class User extends BaseEntity
     email: string;
     @Column("text")
     telefone: string;
+    @Column("boolean")
+    ativo: boolean;
 
 }

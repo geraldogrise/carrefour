@@ -31,8 +31,8 @@ export class DebitoSwagger extends CoreSwagger
                     type : this.NumberType ,
                     required : true
                 } ,
-                userId : {
-                    type : this.NumberType ,
+                data : {
+                    type : this.StringType ,
                     required : true
                 } ,
             }

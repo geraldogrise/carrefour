@@ -55,7 +55,7 @@ export class App
         let app = this .server.build();
         this.SetError();
         app.listen(this.appPort);
-        console.log("Aplicação funcionando na porta " + this.appPort);
+        console.log("Aplicação user funcionando na porta " + this.appPort);
      ;
     }
 

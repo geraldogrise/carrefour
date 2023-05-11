@@ -13,9 +13,9 @@ export class Debito extends BaseEntity
     @Column({type: "decimal", precision: 10, scale: 2, default: 0})
     valor: number;
     @Column("int")
-    userId: number
-    @Column("int")
     tipoId: number
+    @Column("datetime")
+    data: Date
     /*@ManyToOne(() => Tipo, { eager: true, })
     @JoinColumn({ name: 'tipoId' })
     tipo: Tipo;*/

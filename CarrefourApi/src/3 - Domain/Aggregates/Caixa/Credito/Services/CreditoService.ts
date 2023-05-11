@@ -15,6 +15,7 @@ export class CreditoService implements ICreditoService
 
     public async InsertCredito (credito: Credito): Promise<void>
     {
+        credito.data = new Date();
         await this._creditoRepository.Insert(credito as Credito);
     }
 

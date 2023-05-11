@@ -11,7 +11,7 @@ export class Credito extends BaseEntity
     @Column({type: "decimal", precision: 10, scale: 2, default: 0})
     valor: number;
     @Column("int")
-    userId: number
-    @Column("int")
     tipoId: number
+    @Column("datetime")
+    data: Date
 }

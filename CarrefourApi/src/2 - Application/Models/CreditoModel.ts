@@ -34,9 +34,9 @@ export class CreditoModel
     public tipoId: number
 
     @ApiModelProperty( {
-        description : "userId" ,
+        description : "data" ,
         required : true,
-        example: ['1']
+        example: ['']
     })
-    public userId: number
+    public data: Date
 }

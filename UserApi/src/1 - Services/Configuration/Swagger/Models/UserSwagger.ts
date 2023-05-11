@@ -16,7 +16,7 @@ export class UserSwagger extends CoreSwagger
         return {
             properties : {
                 userId : {
-                    type :  this.StringType,
+                    type :  this.NumberType,
                     required : true
                 } ,
                 nome : {
@@ -37,6 +37,10 @@ export class UserSwagger extends CoreSwagger
                 } ,
                 telefone : {
                     type : this.StringType ,
+                    required : true
+                } ,
+                ativo : {
+                    type : this.BooleanType ,
                     required : true
                 } ,
             }

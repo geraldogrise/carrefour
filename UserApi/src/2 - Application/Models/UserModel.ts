@@ -10,7 +10,7 @@ export class UserModel
     @ApiModelProperty( {
         description : "Id" ,
         required : true,
-        example: ['1']
+        example: [1]
     })
     public userId: number
 
@@ -47,6 +47,12 @@ export class UserModel
         example: ['(71)99999-9999']
     })
     public telefone: string
+    @ApiModelProperty( {
+        description : "Ativo" ,
+        required : true,
+        example: ['true']
+    })
+    public ativo: boolean
 
   
 }

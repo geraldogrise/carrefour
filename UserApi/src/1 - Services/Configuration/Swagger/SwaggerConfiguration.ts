@@ -16,7 +16,7 @@ export class SwaggerConfiguration
             {
                 definition : {
                     info : {
-                        title : "Carrefour API" ,
+                        title : "User API" ,
                         version : "1.0",
 
                     },

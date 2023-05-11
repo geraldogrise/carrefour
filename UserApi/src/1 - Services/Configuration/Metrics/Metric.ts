@@ -8,7 +8,7 @@ export class Metric
     private httpRequestDurationMicroseconds: any
     public constructor()
     {
-       this. register = new client.Registry()
+       this.register = new client.Registry();
     }
 
     private setRegistry()
@@ -35,7 +35,7 @@ export class Metric
 
     public FillDurationHistogram (req: Request, res: Response)
     {
-       /* this.setRegistry();
+        /*this.setRegistry();
         this.CreateDurationHistogram();
         const end = this.httpRequestDurationMicroseconds.startTimer()
         const route = url.parse(req.url).pathname;
