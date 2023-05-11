@@ -9,8 +9,4 @@ export class Tipo extends BaseEntity
     tipoId: number = 0;
     @Column("text")
     nome: string;
-    /*@OneToMany(() => Debito, (debito) => debito.tipo)
-    debitos: Debito[];
-    @OneToMany(() => Credito, (credito) => credito.tipo)
-    creditos: Credito[];*/
 }

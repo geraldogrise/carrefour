@@ -18,6 +18,10 @@ import { TipoRepository } from "@repository/TipoRepository";
 import { ICreditoRepository } from "@aggregates/Caixa/Credito/Repository/ICreditoRepository";
 import { IDebitoRepository } from "@aggregates/Caixa/Debito/Repository/IDebitoRepository";
 import { ITipoRepository } from "@aggregates/Caixa/Tipo/Repository/ITipoRepository";
+import { IConsolidadoAppService } from "@iapps/IConsoliadoAppService.";
+import { ConsolidadoAppService } from "@apps/ConsoliadoAppService";
+import { IConsolidadoService } from "@aggregates/Caixa/Consolidado/Services/IConsolidadoService";
+import { ConsolidadoService } from "@aggregates/Caixa/Consolidado/Services/ConsolidadoService";
 
 
 export class BootStrapper
@@ -25,11 +29,13 @@ export class BootStrapper
     public static RegisterServices(container: Container): void
     {
         /* --------------- Application -----------------------*/
+        container.bind<IConsolidadoAppService>('ConsolidadoAppService').to(ConsolidadoAppService);
         container.bind<ICreditoAppService>('CreditoAppService').to(CreditoAppService);
         container.bind<IDebitoAppService>('DebitoAppService').to(DebitoAppService);
         container.bind<ITipoAppService>('TipoAppService').to(TipoAppService);
  
         /* --------------- Domain -----------------------*/
+        container.bind<IConsolidadoService>('ConsolidadoService').to(ConsolidadoService);
         container.bind<ICreditoService>('CreditoService').to(CreditoService);
         container.bind<IDebitoService>('DebitoService').to(DebitoService);
         container.bind<ITipoService>('TipoService').to(TipoService);

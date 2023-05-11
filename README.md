@@ -69,6 +69,17 @@ com a intenção de serem extendidos e não modificados e as classes tem uma uni
 ## Aplicações Swagger
 ![swagger Carrefour Api](swagger1.png)
 ![swagger User Api](swagger2.png)
+
+
+
+## Testes
+Para executar os testes utilize o comando abaixo
+```sh
+npm test
+```
+![testes unitários Carrefour Api](test1.png)
+![testes unitários User Api](test2.png)
+
    
    
 

@@ -1,12 +1,12 @@
 export interface IRepository<TEntity>
 {
-    Insert:(entity: TEntity)=> Promise<void>;
-    InsertRange:(entity: Array<TEntity>)=> Promise<void>;
-    Update:(entity: TEntity)=> Promise<void>;
-    UpdateRange:(entity: Array<TEntity>)=> Promise<void>;
-    DeleteObject:(entity: TEntity)=> Promise<void>;
-    Delete:(id: number)=> Promise<void>;
-    DeleteRange:(entity: Array<TEntity>)=> Promise<void>;
+    Insert:(entity: TEntity)=> Promise<any>;
+    InsertRange:(entity: Array<TEntity>)=> Promise<any>;
+    Update:(entity: TEntity)=> Promise<any>;
+    UpdateRange:(entity: Array<TEntity>)=> Promise<any>;
+    DeleteObject:(entity: TEntity)=> Promise<any>;
+    Delete:(id: number)=> Promise<any>;
+    DeleteRange:(entity: Array<TEntity>)=> Promise<any>;
     GetByFilter:(filter: any)=> Promise<any>;
     GetAll:()=> Promise<TEntity[]>;
 }

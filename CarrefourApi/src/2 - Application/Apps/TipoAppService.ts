@@ -20,7 +20,7 @@ export class TipoAppService extends ApplicationService implements ITipoAppServic
         await this._tipoService.InsertTipo(tipo as Tipo);
     }
 
-    public async UpdateTipo (Tipo: TipoModel): Promise<void>
+    public async UpdateTipo (tipo: TipoModel): Promise<void>
     {
         await this._tipoService.UpdateTipo(tipo as Tipo);
     }

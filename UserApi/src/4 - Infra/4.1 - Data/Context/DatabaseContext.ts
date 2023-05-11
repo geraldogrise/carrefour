@@ -23,9 +23,9 @@ export class DatabaseContext
         const connection = connectionManager.create(
             {
                 "name": ormConfig.name,
-                "type": ormConfig.type,
+                "type": "mysql",
                 "host": ormConfig.host,
-                "port": ormConfig.port,
+                "port": Number(ormConfig.port),
                 "username": ormConfig.username,
                 "password":  ormConfig.password,
                 "database": ormConfig.database,

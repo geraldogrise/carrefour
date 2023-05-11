@@ -13,14 +13,16 @@ export class TipoService implements ITipoService
     }
 
 
-    public async InsertTipo (tipo: Tipo): Promise<void>
+    public async InsertTipo (tipo: Tipo): Promise<Tipo>
     {
         await this._tipoRepository.Insert(tipo as Tipo);
+        return tipo;
     }
 
-    public async UpdateTipo (tipo: Tipo): Promise<void>
+    public async UpdateTipo (tipo: Tipo): Promise<Tipo>
     {
         await this._tipoRepository.Update(tipo as Tipo);
+        return tipo;
     }
 
     public async DeleteTipo (tipoId: number): Promise<void>

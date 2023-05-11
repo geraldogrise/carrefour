@@ -1,6 +1,5 @@
 import "reflect-metadata";
-import {Entity, BaseEntity, Column, PrimaryColumn, PrimaryGeneratedColumn, ManyToOne, JoinColumn} from "typeorm";
-import { Tipo } from "../Tipo/Tipo";
+import {Entity, BaseEntity, Column, PrimaryColumn, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity("debito")
 export class Debito extends BaseEntity
@@ -16,7 +15,4 @@ export class Debito extends BaseEntity
     tipoId: number
     @Column("datetime")
     data: Date
-    /*@ManyToOne(() => Tipo, { eager: true, })
-    @JoinColumn({ name: 'tipoId' })
-    tipo: Tipo;*/
 }

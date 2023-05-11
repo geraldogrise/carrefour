@@ -63,6 +63,11 @@ export class GenericRepository<TEntity> extends Repository<TEntity> implements I
         return await this.connection.manager.findOne(this.entityClass, filter);
     }
 
+    public async ExecuteQuery(query: string): Promise<any>
+    {
+        return await this.connection.manager.query(query);
+    }
+
     public async GetAll ():  Promise<Array<TEntity>>
     {
         return await this.connection.manager.find(this.entityClass)

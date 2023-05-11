@@ -16,5 +16,10 @@ export class CreditoRepository extends GenericRepository<Credito> implements ICr
     {
         return await super.GetByFilter({"creditoId": id});
     }
+
+    public async GetByData (data: any): Promise<any>
+    {
+        return await super.GetByFilter({"data": data});
+    }
 }
 

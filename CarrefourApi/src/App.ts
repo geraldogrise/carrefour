@@ -7,11 +7,13 @@ import { buildProviderModule } from "inversify-binding-decorators";
 import * as bodyParser from 'body-parser';
 import {BootStrapper} from '@ioc/BootStrapper';
 import { SwaggerConfiguration } from "./1 - Services/Configuration/Swagger/SwaggerConfiguration";
+import "@controllers/ConsolidadoController";
 import "@controllers/CreditoController";
 import "@controllers/DebitoController";
 import "@controllers/HealthCheckController";
 import "@controllers/MetricsController";
 import "@controllers/TipoController";
+
 
 
 

@@ -7,7 +7,8 @@
     "start": "node  dist/Server.js",
     "start2": "node --max_old_space_size=4096 --optimize_for_size  --stack_size=4096 dist/Server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/Server.ts",
-    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored"
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
