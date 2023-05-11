@@ -1,0 +1,112 @@
+version: '3'
+ 
+services:
+ 
+  prometheus:
+    build: './prometheus'    
+    ports:
+      - 9090:9090
+    expose:
+      - 9090
+    networks:
+      - monitoring
+  grafana:
+    build: './grafana'    
+    ports:
+      - '3000:3000'
+    environment:
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    expose:
+      - 3000
+    networks:
+      - monitoring
+  mysql:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: carrefour@123
+      MYSQL_DATABASE: carrefour
+      MYSQL_PASSWORD: carrefour@123
+    ports:
+      - "3306:3306"
+    expose:
+      - 3307
+    volumes: 
+      - ./init:/docker-entrypoint-initdb.d
+    networks:
+      - monitoring
+  phpmyadmin:
+    depends_on: 
+     - mysql
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    container_name: pma
+    links:
+      - mysql
+    environment:
+      PMA_PORT: 3306
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: carrefour@123
+    ports:
+      - 8089:80   
+    networks:
+      - monitoring
+  carrefour:
+    build: '../CarrefourApi'
+    links:
+      - mysql:mysql
+    depends_on:
+      - mysql
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=carrefour@123
+      - DB_NAME=carrefour
+      - DB_PORT=3306
+    command: npm start 
+    ports:
+      - "9000:9000" 
+    expose:
+      - 9000
+    volumes:
+      - .:/app/src
+    networks:
+      - monitoring
+  user:
+    build: '../UserApi'
+    links:
+      - mysql:mysql
+    depends_on:
+      - mysql
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=carrefour@123
+      - DB_NAME=carrefourad
+      - DB_PORT=3306
+    command: npm start 
+    ports:
+      - "9001:9001" 
+    expose:
+      - 9001
+    volumes:
+      - .:/app/src
+    networks:
+      - monitoring
+networks:
+  monitoring:
+    driver: bridge
+volumes:
+  dbdata:
+  prometheus_data: {}
+  grafana_data: {}
+
+
+
+
+  
